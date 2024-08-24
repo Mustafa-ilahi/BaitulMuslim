@@ -17,6 +17,7 @@ export const colors = {
   input: '#F1F2F4',
   lightBlack: '#545454',
   green: '#64BC46',
-  blue:'#337AB7',
-  lightOrange:'#E4B86D'
+  blue: '#337AB7',
+  lightOrange: '#E4B86D',
+  yellow: '#F7C112',
 };
