@@ -1,3 +1,5 @@
-// import dropdown from '../../../assets/dropdown.png';
+import logo from '../../../assets/logo.png';
 
-export const images = {};
+export const images = {
+    logo
+};
