@@ -1,9 +1,9 @@
 export const colors = {
   white: '#ffffff',
   black: '#000000',
-  grayText: '#8E8E8E',
+  grayText: '#707070',
   error: 'rgba(200, 0, 0, 0.8)',
-  gray: '#61646B',
+  gray: '#F1F1F1',
   text: '#F5F5F5',
   lightgray: '#f5f5f5',
   placeholdertext: '#807B7B',

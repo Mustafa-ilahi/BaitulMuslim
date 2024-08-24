@@ -3,11 +3,13 @@ import React from 'react';
 import {colors} from './src/services';
 import Registration from './src/screens/Registration';
 import Login from './src/screens/Login';
+import NewPassword from './src/screens/NewPassword';
 
 export default function App() {
   return (
     // <Registration />
-    <Login />
+    // <Login />
+    <NewPassword />
   );
 }
 
