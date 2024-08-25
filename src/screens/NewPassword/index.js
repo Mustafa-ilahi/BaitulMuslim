@@ -35,7 +35,9 @@ export default function NewPassword() {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <BackButton />
+        <View style={styles.backButtonTop}>
+          <BackButton />
+        </View>
         <Image source={images.logo} style={styles.logo} />
         <Text style={styles.title}>BAITULMUSLIM</Text>
         <ImageBackground source={images.bg} style={styles.bgImg}>

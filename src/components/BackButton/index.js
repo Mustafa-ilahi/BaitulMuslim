@@ -15,8 +15,8 @@ export default function BackButton() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: sizes.screenHeight * 0.1,
-    alignSelf: 'flex-start',
+    // marginTop: sizes.screenHeight * 0.1,
+    // alignSelf: 'flex-start',
   },
   backIcon: {
     height: sizes.screenHeight * 0.051,

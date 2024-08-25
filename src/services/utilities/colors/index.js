@@ -11,7 +11,7 @@ export const colors = {
   disabledBg2: '#E9EDF3',
   placeholdertextgray: '#5E5E5E',
   disabledText: '#84888B',
-  borderColor: '#EFEFF0',
+  borderColor: '#79847A',
   btnColor: '#3396CD',
   heading: '#2B7EAD',
   input: '#F1F2F4',
@@ -20,4 +20,8 @@ export const colors = {
   blue: '#337AB7',
   lightOrange: '#E4B86D',
   yellow: '#F7C112',
+  border: '#D5C5C5',
+  lightGreen:'#66f553',
+  greenBg:"#519259",
+  red:'#DE2D10'
 };

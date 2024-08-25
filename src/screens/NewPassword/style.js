@@ -86,6 +86,10 @@ export const styles = StyleSheet.create({
   },
   btnTop: {
     marginTop: sizes.screenHeight * 0.02,
-    paddingBottom:sizes.screenHeight*0.02
+    paddingBottom: sizes.screenHeight * 0.02,
+  },
+  backButtonTop: {
+    marginTop: sizes.screenHeight * 0.1,
+    alignSelf: 'flex-start',
   },
 });
