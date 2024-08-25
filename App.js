@@ -5,13 +5,16 @@ import Registration from './src/screens/Registration';
 import Login from './src/screens/Login';
 import NewPassword from './src/screens/NewPassword';
 import Picture from './src/screens/Picture';
+import Thankyou from './src/screens/Thankyou';
 
 export default function App() {
   return (
     // <Registration />
     // <Login />
     // <NewPassword />
-    <Picture />
+    // <Picture />
+
+    <Thankyou />
   );
 }
 
