@@ -6,6 +6,7 @@ import Login from './src/screens/Login';
 import NewPassword from './src/screens/NewPassword';
 import Picture from './src/screens/Picture';
 import Thankyou from './src/screens/Thankyou';
+import CandidateInfo from './src/screens/CandidateInfo';
 
 export default function App() {
   return (
@@ -13,8 +14,8 @@ export default function App() {
     // <Login />
     // <NewPassword />
     // <Picture />
-
-    <Thankyou />
+    // <Thankyou />
+    <CandidateInfo />
   );
 }
 
