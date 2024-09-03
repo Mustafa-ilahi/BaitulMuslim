@@ -21,7 +21,9 @@ export const colors = {
   lightOrange: '#E4B86D',
   yellow: '#F7C112',
   border: '#D5C5C5',
-  lightGreen:'#66f553',
-  greenBg:"#519259",
-  red:'#DE2D10'
+  lightGreen: '#66f553',
+  greenBg: '#519259',
+  red: '#DE2D10',
+  cardBg: '#CAEFCF',
+  btnBg: '#F0BB62',
 };

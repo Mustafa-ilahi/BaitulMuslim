@@ -6,6 +6,12 @@ import cameraIcon from '../../../assets/cameraIcon.png';
 import successIcon from '../../../assets/successIcon.png';
 import gradientBg from '../../../assets/gradientBg.png';
 import dropdownIcon from '../../../assets/dropdownIcon.png';
+import menuIcon from '../../../assets/menuIcon.png';
+import filterIcon from '../../../assets/filterIcon.png';
+import calendarIcon from '../../../assets/calendarIcon.png';
+import locationIcon from '../../../assets/locationIcon.png';
+import schoolIcon from '../../../assets/schoolIcon.png';
+import workIcon from '../../../assets/workIcon.png';
 
 export const images = {
   logo,
@@ -16,4 +22,10 @@ export const images = {
   successIcon,
   gradientBg,
   dropdownIcon,
+  menuIcon,
+  filterIcon,
+  calendarIcon,
+  locationIcon,
+  schoolIcon,
+  workIcon,
 };
