@@ -12,6 +12,7 @@ import calendarIcon from '../../../assets/calendarIcon.png';
 import locationIcon from '../../../assets/locationIcon.png';
 import schoolIcon from '../../../assets/schoolIcon.png';
 import workIcon from '../../../assets/workIcon.png';
+import user1 from '../../../assets/user1.png';
 
 export const images = {
   logo,
@@ -28,4 +29,5 @@ export const images = {
   locationIcon,
   schoolIcon,
   workIcon,
+  user1
 };

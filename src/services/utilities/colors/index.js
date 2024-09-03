@@ -26,4 +26,5 @@ export const colors = {
   red: '#DE2D10',
   cardBg: '#CAEFCF',
   btnBg: '#F0BB62',
+  greenText2:'#064635'
 };

@@ -17,6 +17,7 @@ export default function CandidatesList() {
 
   const [candidateList, setCandidatesList] = useState([
     {
+      profile: images.user1,
       age: 38,
       location: 'Selangor',
       education: 'Ijazah Sarjana Muda',
@@ -31,12 +32,12 @@ export default function CandidatesList() {
       id: 22100,
     },
     {
-        age: 38,
-        location: 'Sabah',
-        education: 'Diploma',
-        job: 'Akauntan',
-        id: 27800,
-      },
+      age: 38,
+      location: 'Sabah',
+      education: 'Diploma',
+      job: 'Akauntan',
+      id: 27800,
+    },
   ]);
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -89,6 +90,8 @@ export default function CandidatesList() {
                       <Image source={images.workIcon} style={styles.icon2} />
                       <Text style={styles.content}>{item.job}</Text>
                     </View>
+                    <Image source={images.user1} style={styles.userImg}/>
+
                     <Text style={styles.contentId}>{item.id}</Text>
                   </View>
 
@@ -103,111 +106,6 @@ export default function CandidatesList() {
                 </View>
               );
             })}
-
-            {/* <View style={styles.card}>
-              <View style={styles.premiumBtn}>
-                <Text style={styles.whiteText}>Premimum</Text>
-              </View>
-
-              <View style={styles.cardTop}>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.calendarIcon} />
-                  <Text style={styles.content}>38</Text>
-                </View>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.locationIcon} style={styles.icon} />
-                  <Text style={styles.content}>Selangor</Text>
-                </View>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.schoolIcon} style={styles.icon2} />
-                  <Text style={styles.content}>Ijazah Sarjana Muda</Text>
-                </View>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.workIcon} style={styles.icon2} />
-                  <Text style={styles.content}>Cikgu</Text>
-                </View>
-                <Text style={styles.contentId}>29800</Text>
-              </View>
-
-              <View style={styles.btnRow}>
-                <TouchableOpacity style={styles.msgBtn}>
-                  <Text style={styles.msgText}>Mesej</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.profilBtn}>
-                  <Text style={styles.profilText}>Profil Calon</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-
-            <View style={styles.card}>
-              <View style={styles.premiumBtn}>
-                <Text style={styles.whiteText}>Premimum</Text>
-              </View>
-
-              <View style={styles.cardTop}>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.calendarIcon} />
-                  <Text style={styles.content}>38</Text>
-                </View>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.locationIcon} style={styles.icon} />
-                  <Text style={styles.content}>Selangor</Text>
-                </View>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.schoolIcon} style={styles.icon2} />
-                  <Text style={styles.content}>Ijazah Sarjana Muda</Text>
-                </View>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.workIcon} style={styles.icon2} />
-                  <Text style={styles.content}>Cikgu</Text>
-                </View>
-                <Text style={styles.contentId}>29800</Text>
-              </View>
-
-              <View style={styles.btnRow}>
-                <TouchableOpacity style={styles.msgBtn}>
-                  <Text style={styles.msgText}>Mesej</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.profilBtn}>
-                  <Text style={styles.profilText}>Profil Calon</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-
-            <View style={styles.card}>
-              <View style={styles.premiumBtn}>
-                <Text style={styles.whiteText}>Premimum</Text>
-              </View>
-
-              <View style={styles.cardTop}>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.calendarIcon} />
-                  <Text style={styles.content}>38</Text>
-                </View>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.locationIcon} style={styles.icon} />
-                  <Text style={styles.content}>Selangor</Text>
-                </View>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.schoolIcon} style={styles.icon2} />
-                  <Text style={styles.content}>Ijazah Sarjana Muda</Text>
-                </View>
-                <View style={[styles.row, styles.marginBottom]}>
-                  <Image source={images.workIcon} style={styles.icon2} />
-                  <Text style={styles.content}>Cikgu</Text>
-                </View>
-                <Text style={styles.contentId}>29800</Text>
-              </View>
-
-              <View style={styles.btnRow}>
-                <TouchableOpacity style={styles.msgBtn}>
-                  <Text style={styles.msgText}>Mesej</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.profilBtn}>
-                  <Text style={styles.profilText}>Profil Calon</Text>
-                </TouchableOpacity>
-              </View>
-            </View> */}
           </View>
         </View>
       </ScrollView>

@@ -104,10 +104,10 @@ export const styles = StyleSheet.create({
   contentId: {
     color: colors.grayText,
     fontSize: fontSize.h5,
-    left: sizes.screenWidth * 0.1,
+    left: sizes.screenWidth * 0.08,
     fontWeight: '600',
     width: sizes.screenWidth * 0.45,
-    bottom: sizes.screenWidth * 0.05,
+    bottom: sizes.screenWidth * 0.1,
   },
   msgBtn: {
     backgroundColor: colors.btnBg,
@@ -138,5 +138,11 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: fontSize.h6,
     fontWeight: '600',
+  },
+  userImg: {
+    position: 'absolute',
+    height: sizes.screenHeight * 0.12,
+    width: sizes.screenWidth * 0.22,
+    left: sizes.screenWidth * 0.05,
   },
 });

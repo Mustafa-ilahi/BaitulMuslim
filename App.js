@@ -8,6 +8,7 @@ import Picture from './src/screens/Picture';
 import Thankyou from './src/screens/Thankyou';
 import CandidateInfo from './src/screens/CandidateInfo';
 import CandidatesList from './src/screens/CandidatesList';
+import ComplainInfoSuccess from './src/screens/ComplainInfoSuccess';
 
 export default function App() {
   return (
@@ -17,7 +18,8 @@ export default function App() {
     // <Picture />
     // <Thankyou />
     // <CandidateInfo />
-    <CandidatesList />
+    // <CandidatesList />
+    <ComplainInfoSuccess />
   );
 }
 
