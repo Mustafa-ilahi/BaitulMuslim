@@ -10,6 +10,7 @@ import CandidateInfo from './src/screens/CandidateInfo';
 import CandidatesList from './src/screens/CandidatesList';
 import ComplainInfoSuccess from './src/screens/ComplainInfoSuccess';
 import Chat from './src/screens/Chat';
+import CandidateProfile from './src/screens/CandidateProfile';
 
 export default function App() {
   return (
@@ -21,7 +22,8 @@ export default function App() {
     // <CandidateInfo />
     // <CandidatesList />
     // <ComplainInfoSuccess />
-    <Chat />
+    // <Chat />
+    <CandidateProfile />
   );
 }
 

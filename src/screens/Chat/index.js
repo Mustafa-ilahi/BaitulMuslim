@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  SafeAreaView,
 } from 'react-native';
 import React, {useState} from 'react';
 import {styles} from './style';
@@ -48,6 +49,8 @@ export default function Chat() {
   };
 
   return (
+    <SafeAreaView>
+
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity style={styles.backButton}>
@@ -101,5 +104,7 @@ export default function Chat() {
         </TouchableOpacity>
       </View>
     </View>
+    </SafeAreaView>
+
   );
 }

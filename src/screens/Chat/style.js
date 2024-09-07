@@ -3,7 +3,7 @@ import {colors, sizes, fontSize} from '../../services';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: sizes.screenHeight,
     backgroundColor: colors.white,
   },
   header: {
