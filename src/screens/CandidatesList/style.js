@@ -115,6 +115,12 @@ export const styles = StyleSheet.create({
     width: sizes.screenWidth * 0.35,
     borderRadius: sizes.screenWidth * 0.03,
   },
+  tutupBtn:{
+    backgroundColor: colors.lightgray,
+    padding: sizes.screenHeight * 0.01,
+    width: sizes.screenWidth * 0.35,
+    borderRadius: sizes.screenWidth * 0.03,
+  },
   profilBtn: {
     backgroundColor: colors.blue,
     padding: sizes.screenHeight * 0.01,
@@ -133,6 +139,12 @@ export const styles = StyleSheet.create({
     fontSize: fontSize.h6,
     fontWeight: '600',
   },
+  tutpText:{
+    color: colors.grayText,
+    textAlign: 'center',
+    fontSize: fontSize.h6,
+    fontWeight: '600',
+  },
   profilText: {
     color: colors.white,
     textAlign: 'center',
@@ -145,4 +157,55 @@ export const styles = StyleSheet.create({
     width: sizes.screenWidth * 0.22,
     left: sizes.screenWidth * 0.05,
   },
+  paddingRight: {},
+  text: {
+    color: colors.grayText,
+    fontSize: fontSize.h5,
+    marginBottom: sizes.screenHeight * 0.02,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  greenBorder: {
+    borderWidth: 0.3,
+    width: sizes.screenWidth * 0.9,
+    marginBottom: sizes.screenHeight * 0.02,
+    borderColor: colors.grayText,
+    alignSelf:'center'
+  },
+  modalView: {
+    backgroundColor: colors.white,
+    borderRadius: sizes.screenWidth * 0.07,
+    padding: sizes.screenHeight * 0.03,
+    height:sizes.screenHeight*0.95
+  },
+  label: {
+    alignSelf: 'flex-start',
+    marginVertical: sizes.screenHeight * 0.01,
+    color: colors.grayText,
+    fontSize: fontSize.medium,
+    left:sizes.screenWidth*0.01
+  },
+    pickerContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: colors.border,
+        borderRadius: 5,
+        paddingHorizontal: 10,
+        width: '100%',
+        backgroundColor: colors.white,
+    },
+    picker: {
+        flex: 1,
+        color: colors.grayText,
+        backgroundColor: colors.white,
+    },
+  pickerIcon: {
+    height: sizes.screenHeight * 0.01,
+    width: sizes.screenWidth * 0.03,
+    right: sizes.screenWidth * 0.02,
+  },
+  modalBtnTop:{
+    marginTop:sizes.screenHeight*0.03
+  }
 });

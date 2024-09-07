@@ -18,8 +18,8 @@ export default function App() {
     // <Picture />
     // <Thankyou />
     // <CandidateInfo />
-    // <CandidatesList />
-    <ComplainInfoSuccess />
+    <CandidatesList />
+    // <ComplainInfoSuccess />
   );
 }
 
