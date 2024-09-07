@@ -13,6 +13,9 @@ import locationIcon from '../../../assets/locationIcon.png';
 import schoolIcon from '../../../assets/schoolIcon.png';
 import workIcon from '../../../assets/workIcon.png';
 import user1 from '../../../assets/user1.png';
+import user2 from '../../../assets/user2.png';
+import sendIcon from '../../../assets/sendIcon.png';
+import headerbackIcon from '../../../assets/headerbackIcon.png';
 
 export const images = {
   logo,
@@ -29,5 +32,8 @@ export const images = {
   locationIcon,
   schoolIcon,
   workIcon,
-  user1
+  user1,
+  user2,
+  sendIcon,
+  headerbackIcon
 };
