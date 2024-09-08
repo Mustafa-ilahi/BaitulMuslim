@@ -15,7 +15,7 @@ import {colors, sizes} from '../../services';
 import Modal from 'react-native-modal';
 import {Picker} from '@react-native-picker/picker';
 
-export default function CandidatesList() {
+export default function CandidatesList({navigation}) {
   const [searchInput, setSearchInput] = useState('');
   const [isModalVisible, setModalVisible] = useState(false);
   const [candidateList, setCandidatesList] = useState([
@@ -117,10 +117,18 @@ export default function CandidatesList() {
                   </View>
 
                   <View style={styles.btnRow}>
-                    <TouchableOpacity style={styles.msgBtn}>
+                    <TouchableOpacity
+                      style={styles.msgBtn}
+                      onPress={() =>
+                        navigation.navigate('Chat', {id: item.id})
+                      }>
                       <Text style={styles.msgText}>Mesej</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.profilBtn}>
+                    <TouchableOpacity
+                      style={styles.profilBtn}
+                      onPress={() =>
+                        navigation.navigate('CandidateProfile', {id: item.id})
+                      }>
                       <Text style={styles.profilText}>Profil Calon</Text>
                     </TouchableOpacity>
                   </View>

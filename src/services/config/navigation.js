@@ -16,7 +16,7 @@ const Stack = createStackNavigator();
 export default function MainNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName='CandidateProfile'>
+      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName='CandidatesList'>
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="NewPassword" component={NewPassword} />

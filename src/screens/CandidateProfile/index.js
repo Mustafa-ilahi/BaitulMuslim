@@ -14,13 +14,14 @@ import BackButton from '../../components/BackButton';
 import Header from '../../components/Header';
 import Modal from 'react-native-modal';
 
-export default function CandidateProfile({navigation}) {
+export default function CandidateProfile({navigation,route}) {
   const [showProfile, setShowProfile] = useState(true);
 
   const [isModalVisibleKirim, setModalVisibleKirim] = useState(false);
   const [isModalVisibleCalon, setModalVisibleCalon] = useState(false);
   const [isModalVisibleHalang, setModalVisibleHalang] = useState(false);
   const [showKeluText, setShowKeluText] = useState(false);
+  const {id} = route?.params
 
   const toggleModalKirim = () => {
     setModalVisibleKirim(!isModalVisibleKirim);
@@ -44,7 +45,7 @@ export default function CandidateProfile({navigation}) {
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}>
         <View style={styles.idSection}>
-          <Text style={styles.idText}>ID: 2980</Text>
+          <Text style={styles.idText}>ID: {id}</Text>
 
           <View style={styles.premiumBadge}>
             <Text style={styles.premiumText}>PREMIUM</Text>
@@ -109,7 +110,7 @@ export default function CandidateProfile({navigation}) {
             <View style={styles.buttonSection}>
               <TouchableOpacity
                 style={styles.actionButton}
-                onPress={()=>navigation.navigate("Chat")}
+                onPress={()=>navigation.navigate("Chat",{id:id})}
               >
                 <Text style={styles.buttonText}>Mesej</Text>
               </TouchableOpacity>

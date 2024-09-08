@@ -12,7 +12,7 @@ import {styles} from './style';
 import {images} from '../../services/utilities/images';
 import {colors} from '../../services';
 
-export default function Chat({navigation}) {
+export default function Chat({navigation,route}) {
   const [newMessage, setNewMessage] = useState('');
 
   const [messages, setMessages] = useState([
@@ -32,6 +32,7 @@ export default function Chat({navigation}) {
     },
   ]);
 
+  const {id} = route?.params
   const sendMessage = () => {
     if (newMessage.trim() === '') return;
 
@@ -58,7 +59,7 @@ export default function Chat({navigation}) {
             <Image source={images.headerbackIcon} style={styles.headerBack} />
           </TouchableOpacity>
           <Image source={images.user1} style={styles.profileImage} />
-          <Text style={styles.userName}>22901</Text>
+          <Text style={styles.userName}>{id}</Text>
         </View>
 
         <ScrollView style={styles.messagesContainer}>
