@@ -4,23 +4,23 @@ import {colors, sizes, fontSize} from '../../services';
 export const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
   },
   imageContainer: {
     alignItems: 'center',
     position: 'relative',
   },
   profileImage: {
-    width: '100%',
-    height: 250, // Adjust the height accordingly
+    width: sizes.screenWidth,
+    height: sizes.screenHeight * 0.4,
     resizeMode: 'cover',
   },
   scrollView: {
-    marginTop: -30, // This will pull the content slightly over the image
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
-    backgroundColor: '#fff', // Ensuring the content background color
-    overflow: 'hidden', // Ensures the content stays within the rounded corners
+    marginTop: -sizes.screenHeight * 0.05,
+    borderTopLeftRadius: sizes.screenWidth * 0.1,
+    borderTopRightRadius: sizes.screenWidth * 0.1,
+    backgroundColor: colors.white,
+    overflow: 'hidden',
   },
   scrollContainer: {
     paddingHorizontal: 20,
@@ -57,26 +57,32 @@ export const styles = StyleSheet.create({
     backgroundColor: '#A5F58A',
     paddingRight: sizes.screenWidth * 0.02,
     paddingLeft: sizes.screenWidth * 0.02,
-    padding:sizes.screenHeight*0.01,
-    borderRadius:sizes.screenWidth*0.02
+    padding: sizes.screenHeight * 0.01,
+    borderRadius: sizes.screenWidth * 0.02,
   },
   activeTime: {
     color: colors.black,
   },
   menuSection: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    alignSelf: 'center',
     marginVertical: 20,
+    width: sizes.screenWidth * 0.6,
   },
   menuButton: {
-    padding: 10,
-    backgroundColor: '#eaeaea',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: sizes.screenWidth * 0.25,
     borderRadius: 5,
   },
   menuText: {
     fontSize: 16,
-    color: '#555',
+    color: colors.grayText,
+    fontWeight: '500',
+    textAlign: 'center',
+    marginTop: 5,
   },
   section: {
     width: '100%',
@@ -87,12 +93,13 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 5,
     fontSize: 16,
-    color: '#555',
+    color: '#E8CD96',
   },
   sectionText: {
     fontSize: 14,
-    color: '#888',
+    color: colors.grayText,
     marginBottom: 3,
+    fontWeight: '500',
   },
   buttonSection: {
     width: '100%',
@@ -100,14 +107,95 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   actionButton: {
-    backgroundColor: '#007bff',
+    backgroundColor: colors.blue,
     padding: 10,
-    borderRadius: 5,
+    borderRadius: sizes.screenWidth * 0.03,
     marginVertical: 5,
     alignItems: 'center',
   },
   buttonText: {
     color: '#fff',
     fontSize: 16,
+  },
+  greenBorder: {
+    borderWidth: 0.3,
+    width: sizes.screenWidth * 0.9,
+    marginBottom: sizes.screenHeight * 0.01,
+    borderColor: colors.border,
+    alignSelf: 'center',
+  },
+  profileIcon: {
+    height: sizes.screenHeight * 0.05,
+    width: sizes.screenHeight * 0.05,
+  },
+
+  whiteBtn: {
+    backgroundColor: colors.white,
+    padding: 10,
+    borderRadius: sizes.screenWidth * 0.03,
+    marginVertical: sizes.screenHeight * 0.03,
+    alignItems: 'center',
+    alignSelf: 'center',
+    borderWidth: 1,
+    width: sizes.screenWidth * 0.6,
+  },
+  whiteBtn2:{
+    backgroundColor: colors.white,
+    padding: 10,
+    borderRadius: sizes.screenWidth * 0.03,
+    marginVertical: sizes.screenHeight * 0.03,
+    alignItems: 'center',
+    alignSelf: 'center',
+    borderWidth: 1,
+  },
+  buttonTextBlack: {
+    color: colors.black,
+    fontSize: fontSize.h5,
+    fontWeight: '500',
+  },
+  modalView: {
+    backgroundColor: colors.white,
+    borderRadius: sizes.screenWidth * 0.1,
+    padding: 20,
+    width: sizes.screenWidth * 0.75,
+    alignSelf: 'center',
+  },
+
+  modalText: {
+    color: colors.grayText,
+    textAlign: 'center',
+    fontSize: fontSize.h5,
+    marginBottom: sizes.screenHeight * 0.02,
+  },
+  bold: {
+    fontWeight: '600',
+  },
+  modalBtn: {
+    color: colors.white,
+    backgroundColor: '#C0EFBA',
+    height: sizes.screenHeight * 0.05,
+    borderRadius: sizes.screenWidth * 0.04,
+    width: sizes.screenWidth * 0.23,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+  btnText: {
+    color: colors.grayText,
+    fontSize: fontSize.h6,
+    fontWeight: '600',
+  },
+  greenBorderModal: {
+    borderWidth: 0.3,
+    width: sizes.screenWidth * 0.65,
+    marginBottom: sizes.screenHeight * 0.02,
+    marginTop: sizes.screenHeight * 0.02,
+    borderColor: colors.border,
+    alignSelf: 'center',
+  },
+  logo: {
+    height: 68,
+    width: 60,
+    alignSelf: 'center',
   },
 });

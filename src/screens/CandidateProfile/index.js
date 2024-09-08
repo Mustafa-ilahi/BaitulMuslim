@@ -7,88 +7,204 @@ import {
   ScrollView,
   SafeAreaView,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {styles} from './style';
 import {images} from '../../services/utilities/images';
+import BackButton from '../../components/BackButton';
+import Header from '../../components/Header';
+import Modal from 'react-native-modal';
 
 export default function CandidateProfile() {
+  const [showProfile, setShowProfile] = useState(true);
+
+  const [isModalVisibleKirim, setModalVisibleKirim] = useState(false);
+  const [isModalVisibleCalon, setModalVisibleCalon] = useState(false);
+  const [isModalVisibleHalang, setModalVisibleHalang] = useState(false);
+  const [showKeluText, setShowKeluText] = useState(false);
+
+  const toggleModalKirim = () => {
+    setModalVisibleKirim(!isModalVisibleKirim);
+  };
+  const toggleModalCalon = () => {
+    setModalVisibleCalon(!isModalVisibleCalon);
+  };
+  const toggleModalHalang = () => {
+    setModalVisibleHalang(!isModalVisibleHalang);
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
-      {/* Profile Image Outside ScrollView */}
+      <Header />
       <View style={styles.imageContainer}>
-        <Image
-          source={images.user1} // Replace with your image URL or source
-          style={styles.profileImage}
-        />
+        <Image source={images.user1} style={styles.profileImage} />
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContainer} style={styles.scrollView}
-      
-      showsVerticalScrollIndicator={false} 
-      >
-        {/* ID Section */}
+      <ScrollView
+        contentContainerStyle={styles.scrollContainer}
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={false}>
         <View style={styles.idSection}>
           <Text style={styles.idText}>ID: 2980</Text>
-          
-          {/* Swapped positions */}
+
           <View style={styles.premiumBadge}>
             <Text style={styles.premiumText}>PREMIUM</Text>
           </View>
         </View>
 
-        {/* Premium Badge Moved here */}
         <View style={styles.timeSection}>
           <Text style={styles.activeTime}>15 Minit 30 Saat Yang Lalu</Text>
         </View>
 
-        {/* Menu Section */}
         <View style={styles.menuSection}>
-          <TouchableOpacity style={styles.menuButton}>
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => setShowProfile(true)}>
+            <Image source={images.profile} style={styles.profileIcon} />
             <Text style={styles.menuText}>Profil</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuButton}>
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={() => setShowProfile(false)}>
+            <Image source={images.menu} style={styles.profileIcon} />
+
             <Text style={styles.menuText}>Menu Tambahan</Text>
           </TouchableOpacity>
         </View>
 
-        {/* Personal Information Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionHeader}>Maklumat Peribadi</Text>
-          <Text style={styles.sectionText}>Umur: 25</Text>
-          <Text style={styles.sectionText}>Tarikh Lahir: 01/01/1998</Text>
-          <Text style={styles.sectionText}>Tahap Pendidikan: Degree</Text>
-          <Text style={styles.sectionText}>Pekerjaan: Engineer</Text>
-          <Text style={styles.sectionText}>Negeri Menetap: Selangor</Text>
-          <Text style={styles.sectionText}>Negeri Asal: Johor</Text>
-        </View>
+        {showProfile ? (
+          <>
+            <View style={styles.section}>
+              <Text style={styles.sectionHeader}>Maklumat Peribadi</Text>
+              <View style={styles.greenBorder}></View>
 
-        {/* About Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionHeader}>Tentang Diri</Text>
-          <Text style={styles.sectionText}>Status Perhubungan: Single</Text>
-          <Text style={styles.sectionText}>Status Diri: Available</Text>
-          <Text style={styles.sectionText}>Anggaran Masa Ingin Berkahwin: 1 year</Text>
-        </View>
+              <Text style={styles.sectionText}>Umur: </Text>
+              <Text style={styles.sectionText}>Tarikh Lahir: </Text>
+              <Text style={styles.sectionText}>Tahap Pendidikan: </Text>
+              <Text style={styles.sectionText}>Pekerjaan: </Text>
+              <Text style={styles.sectionText}>Negeri Menetap: </Text>
+              <Text style={styles.sectionText}>Negeri Asal: </Text>
+            </View>
 
-        {/* Partner Criteria Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionHeader}>Kriteria Bakal Pasangan</Text>
-          <Text style={styles.sectionText}>Tahap Kewangan Pasangan: Stable</Text>
-          <Text style={styles.sectionText}>Ciri Pasangan yang Dikehendaki: Kind, Respectful</Text>
-        </View>
+            <View style={styles.section}>
+              <Text style={styles.sectionHeader}>Tentang Diri</Text>
+              <View style={styles.greenBorder}></View>
 
-        {/* Button Section */}
-        <View style={styles.buttonSection}>
-          <TouchableOpacity style={styles.actionButton}>
-            <Text style={styles.buttonText}>Mesej</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.actionButton}>
-            <Text style={styles.buttonText}>Kirim Salam</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.actionButton}>
-            <Text style={styles.buttonText}>Masukkan Ke Calon Kegemaran</Text>
-          </TouchableOpacity>
-        </View>
+              <Text style={styles.sectionText}>Status Perhubungan: </Text>
+              <Text style={styles.sectionText}>Status Diri: </Text>
+              <Text style={styles.sectionText}>
+                Anggaran Masa Ingin Berkahwin:
+              </Text>
+            </View>
+
+            <View style={styles.section}>
+              <Text style={styles.sectionHeader}>Kriteria Bakal Pasangan</Text>
+              <View style={styles.greenBorder}></View>
+
+              <Text style={styles.sectionText}>Tahap Kewangan Pasangan: </Text>
+              <Text style={styles.sectionText}>
+                Ciri Pasangan yang Dikehendaki:{' '}
+              </Text>
+            </View>
+
+            <View style={styles.buttonSection}>
+              <TouchableOpacity
+                style={styles.actionButton}
+                // onPress={()=>navigation.navigate("Mesej")}
+              >
+                <Text style={styles.buttonText}>Mesej</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.actionButton}
+                onPress={toggleModalKirim}>
+                <Text style={styles.buttonText}>Kirim Salam</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.actionButton}
+                onPress={toggleModalCalon}>
+                <Text style={styles.buttonText}>
+                  Masukkan Ke Calon Kegemaran
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </>
+        ) : (
+          <>
+            {!showKeluText ? (
+              <TouchableOpacity
+                style={styles.whiteBtn}
+                onPress={toggleModalHalang}>
+                <Text style={styles.buttonTextBlack}>Halang Calon </Text>
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity
+                style={styles.whiteBtn2}
+                onPress={toggleModalHalang}>
+                <Text style={styles.buttonTextBlack}>Keluarkan dari calon dihalang </Text>
+              </TouchableOpacity>
+            )}
+
+            <TouchableOpacity style={styles.whiteBtn}>
+              <Text style={styles.buttonTextBlack}>Aduan</Text>
+            </TouchableOpacity>
+          </>
+        )}
+
+        <Modal isVisible={isModalVisibleKirim}>
+          <View style={styles.modalView}>
+            <Image source={images.logo} style={styles.logo} />
+            <View style={styles.greenBorderModal}></View>
+
+            <Text style={[styles.modalText, styles.bold]}>
+              Salam anda sudah dikirim
+            </Text>
+            <View style={styles.btnTop}>
+              <TouchableOpacity
+                onPress={toggleModalKirim}
+                style={styles.modalBtn}>
+                <Text style={styles.btnText}>OK</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+
+        <Modal isVisible={isModalVisibleCalon}>
+          <View style={styles.modalView}>
+            <Image source={images.logo} style={styles.logo} />
+            <View style={styles.greenBorderModal}></View>
+
+            <Text style={[styles.modalText, styles.bold]}>
+              Calon telah dimasukkan ke dalam senarai calon kegemaran
+            </Text>
+            <View style={styles.btnTop}>
+              <TouchableOpacity
+                onPress={toggleModalCalon}
+                style={styles.modalBtn}>
+                <Text style={styles.btnText}>OK</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+
+        <Modal isVisible={isModalVisibleHalang}>
+          <View style={styles.modalView}>
+            <Image source={images.logo} style={styles.logo} />
+            <View style={styles.greenBorderModal}></View>
+            <Text style={[styles.modalText, styles.bold]}>
+              Calon dihalang tidak dapat melihat borang dan menghantar mesej
+              kepada anda. Adakah anda pasti?
+            </Text>
+            <View style={styles.btnTop}>
+              <TouchableOpacity
+                onPress={() => {
+                  toggleModalHalang();
+                  setShowKeluText(!showKeluText);
+                }}
+                style={styles.modalBtn}>
+                <Text style={styles.btnText}>OK</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
       </ScrollView>
     </SafeAreaView>
   );

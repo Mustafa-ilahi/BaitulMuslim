@@ -16,6 +16,8 @@ import user1 from '../../../assets/user1.png';
 import user2 from '../../../assets/user2.png';
 import sendIcon from '../../../assets/sendIcon.png';
 import headerbackIcon from '../../../assets/headerbackIcon.png';
+import profile from '../../../assets/profile.png';
+import menu from '../../../assets/menu.png';
 
 export const images = {
   logo,
@@ -35,5 +37,7 @@ export const images = {
   user1,
   user2,
   sendIcon,
-  headerbackIcon
+  headerbackIcon,
+  profile,
+  menu,
 };
