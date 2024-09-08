@@ -14,7 +14,7 @@ import BackButton from '../../components/BackButton';
 import Header from '../../components/Header';
 import Modal from 'react-native-modal';
 
-export default function CandidateProfile() {
+export default function CandidateProfile({navigation}) {
   const [showProfile, setShowProfile] = useState(true);
 
   const [isModalVisibleKirim, setModalVisibleKirim] = useState(false);
@@ -109,7 +109,7 @@ export default function CandidateProfile() {
             <View style={styles.buttonSection}>
               <TouchableOpacity
                 style={styles.actionButton}
-                // onPress={()=>navigation.navigate("Mesej")}
+                onPress={()=>navigation.navigate("Chat")}
               >
                 <Text style={styles.buttonText}>Mesej</Text>
               </TouchableOpacity>

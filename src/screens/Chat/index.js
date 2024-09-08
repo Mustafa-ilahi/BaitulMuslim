@@ -12,7 +12,7 @@ import {styles} from './style';
 import {images} from '../../services/utilities/images';
 import {colors} from '../../services';
 
-export default function Chat() {
+export default function Chat({navigation}) {
   const [newMessage, setNewMessage] = useState('');
 
   const [messages, setMessages] = useState([
@@ -50,61 +50,63 @@ export default function Chat() {
 
   return (
     <SafeAreaView>
-
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton}>
-          <Image source={images.headerbackIcon} style={styles.headerBack} />
-        </TouchableOpacity>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => navigation.goBack()}>
+            <Image source={images.headerbackIcon} style={styles.headerBack} />
+          </TouchableOpacity>
           <Image source={images.user1} style={styles.profileImage} />
           <Text style={styles.userName}>22901</Text>
-      </View>
+        </View>
 
-      <ScrollView style={styles.messagesContainer}>
-        {messages.map(message => (
-          <View
-            key={message.id}
-            style={
-              message.isSender
-                ? styles.messageWrapperRight
-                : styles.messageWrapper
-            }>
-            {!message.isSender && (
-              <Image
-                source={message.profileImage}
-                style={styles.messageProfileImage}
-              />
-            )}
+        <ScrollView style={styles.messagesContainer}>
+          {messages.map(message => (
             <View
+              key={message.id}
               style={
-                message.isSender ? styles.senderMessage : styles.receiverMessage
+                message.isSender
+                  ? styles.messageWrapperRight
+                  : styles.messageWrapper
               }>
-              <Text style={styles.messageText}>{message.text}</Text>
-              <Text style={styles.messageDate}>{message.date}</Text>
+              {!message.isSender && (
+                <Image
+                  source={message.profileImage}
+                  style={styles.messageProfileImage}
+                />
+              )}
+              <View
+                style={
+                  message.isSender
+                    ? styles.senderMessage
+                    : styles.receiverMessage
+                }>
+                <Text style={styles.messageText}>{message.text}</Text>
+                <Text style={styles.messageDate}>{message.date}</Text>
+              </View>
+              {message.isSender && (
+                <Image
+                  source={message.profileImage}
+                  style={styles.messageProfileImage}
+                />
+              )}
             </View>
-            {message.isSender && (
-              <Image
-                source={message.profileImage}
-                style={styles.messageProfileImage}
-              />
-            )}
-          </View>
-        ))}
-      </ScrollView>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Mesej"
-          placeholderTextColor={colors.grayText}
-          value={newMessage}
-          onChangeText={setNewMessage}
-        />
-        <TouchableOpacity style={styles.sendButton} onPress={sendMessage}>
-          <Image source={images.sendIcon} style={styles.sendIcon} />
-        </TouchableOpacity>
+          ))}
+        </ScrollView>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Mesej"
+            placeholderTextColor={colors.grayText}
+            value={newMessage}
+            onChangeText={setNewMessage}
+          />
+          <TouchableOpacity style={styles.sendButton} onPress={sendMessage}>
+            <Image source={images.sendIcon} style={styles.sendIcon} />
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
     </SafeAreaView>
-
   );
 }

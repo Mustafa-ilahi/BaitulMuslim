@@ -11,6 +11,7 @@ import CandidatesList from './src/screens/CandidatesList';
 import ComplainInfoSuccess from './src/screens/ComplainInfoSuccess';
 import Chat from './src/screens/Chat';
 import CandidateProfile from './src/screens/CandidateProfile';
+import MainNavigator from './src/services/config/navigation';
 
 export default function App() {
   return (
@@ -23,7 +24,8 @@ export default function App() {
     // <CandidatesList />
     // <ComplainInfoSuccess />
     // <Chat />
-    <CandidateProfile />
+    // <CandidateProfile />
+    <MainNavigator />
   );
 }
 
