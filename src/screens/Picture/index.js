@@ -16,7 +16,7 @@ import {colors, sizes} from '../../services';
 import BackButton from '../../components/BackButton';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
-export default function Picture() {
+export default function Picture({navigation}) {
   const [imageUri, setImageUri] = useState('');
 
   const cameraLaunch = () => {
@@ -66,7 +66,9 @@ export default function Picture() {
     });
   };
 
-  const handleSave = () => {};
+  const handleSave = () => {
+    navigation.navigate('Thankyou');
+  };
 
   return (
     <SafeAreaView>
@@ -133,7 +135,7 @@ export default function Picture() {
               // onPress={handleWhatsapp}
               style={styles.top}>
               <Text style={[styles.loginLink, styles.top]}>
-                 klik sini untuk Whatsapp Admin.
+                klik sini untuk Whatsapp Admin.
               </Text>
             </TouchableOpacity>
           </View>

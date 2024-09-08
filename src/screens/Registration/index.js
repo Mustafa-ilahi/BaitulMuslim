@@ -14,7 +14,7 @@ import {styles} from './style';
 import {images} from '../../services/utilities/images';
 import {colors, sizes} from '../../services';
 
-export default function Registration() {
+export default function Registration({navigation}) {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
@@ -22,12 +22,13 @@ export default function Registration() {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleLoginPress = () => {
+    navigation.navigate("Login")
     console.log('Log Masuk Di Sini pressed');
   };
 
   return (
     <SafeAreaView>
-      <ScrollView style={{backgroundColor:colors.white}}>
+      <ScrollView style={{backgroundColor: colors.white}}>
         <View style={styles.container}>
           <Image source={images.logo} style={styles.logo} />
           <Text style={styles.title}>Daftar</Text>
@@ -83,7 +84,9 @@ export default function Registration() {
             placeholderTextColor={colors.disabledBg}
           />
 
-          <TouchableOpacity style={styles.registerButton}>
+          <TouchableOpacity
+            style={styles.registerButton}
+            onPress={() => navigation.navigate('CandidateForm')}>
             <Text style={styles.registerButtonText}>Daftar</Text>
           </TouchableOpacity>
 
@@ -100,7 +103,7 @@ export default function Registration() {
             dan DUDA sahaja
           </Text>
         </View>
-        <View style={{marginBottom:sizes.screenHeight*0.1}}></View>
+        <View style={{marginBottom: sizes.screenHeight * 0.1}}></View>
       </ScrollView>
     </SafeAreaView>
   );

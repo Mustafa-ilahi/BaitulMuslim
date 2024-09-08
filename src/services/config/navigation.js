@@ -10,13 +10,14 @@ import CandidatesList from '../../screens/CandidatesList';
 import ComplainInfoSuccess from '../../screens/ComplainInfoSuccess';
 import Chat from '../../screens/Chat';
 import CandidateProfile from '../../screens/CandidateProfile';
+import CandidateForm from '../../screens/CandidateInfo';
 
 const Stack = createStackNavigator();
 
 export default function MainNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName='CandidatesList'>
+      <Stack.Navigator screenOptions={{headerShown: false}} >
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="NewPassword" component={NewPassword} />
@@ -26,6 +27,7 @@ export default function MainNavigator() {
         <Stack.Screen name="CandidatesList" component={CandidatesList} />
         <Stack.Screen name="ComplainInfoSuccess" component={ComplainInfoSuccess} />
         <Stack.Screen name="Chat" component={Chat} />
+        <Stack.Screen name="CandidateForm" component={CandidateForm} />
         <Stack.Screen name="CandidateProfile" component={CandidateProfile} />
       </Stack.Navigator>
     </NavigationContainer>

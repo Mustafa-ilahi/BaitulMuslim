@@ -15,7 +15,7 @@ import {styles} from './style';
 import {images} from '../../services/utilities/images';
 import {colors, sizes} from '../../services';
 
-export default function CandidateForm() {
+export default function CandidateForm({navigation}) {
   const [formData, setFormData] = useState({
     statusBorang: '',
     jantina: '',
@@ -37,6 +37,7 @@ export default function CandidateForm() {
   const handleSubmit = () => {
     if (Object.values(formData).some(field => field === '')) {
       setError(true);
+      navigation.navigate('Picture');
     } else {
       setError(false);
     }

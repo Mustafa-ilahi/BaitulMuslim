@@ -13,7 +13,10 @@ import {
 import {styles} from './style';
 import {images} from '../../services/utilities/images';
 
-export default function Thankyou() {
+export default function Thankyou({navigation}) {
+  const handleSenarai = () => {
+    navigation.navigate('CandidatesList');
+  };
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -28,9 +31,7 @@ export default function Thankyou() {
         </Text>
 
         <View style={styles.btnTop}>
-          <TouchableOpacity
-            //   onPress={handleSave}
-            style={styles.saveBtn}>
+          <TouchableOpacity onPress={handleSenarai} style={styles.saveBtn}>
             <Text style={styles.saveBtnText}>Senarai Calon</Text>
           </TouchableOpacity>
         </View>

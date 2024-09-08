@@ -13,15 +13,19 @@ import {styles} from './style';
 import {images} from '../../services/utilities/images';
 import {colors, sizes} from '../../services';
 
-export default function Login() {
+export default function Login({navigation}) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleForgotPress = () => {
+    navigation.navigate("NewPassword")
+    
     console.log('Klik Di Sini pressed');
   };
 
   const handleRegisterPress = () => {
+    navigation.navigate("Registration")
+
     console.log('Daftar Masuk Di Sini pressed');
   };
 
@@ -65,7 +69,7 @@ export default function Login() {
             placeholderTextColor={colors.disabledBg}
           />
 
-          <TouchableOpacity style={styles.registerButton}>
+          <TouchableOpacity style={styles.registerButton} onPress={()=>navigation.navigate("CandidatesList")}>
             <Text style={styles.registerButtonText}>Log Masuk</Text>
           </TouchableOpacity>
 
