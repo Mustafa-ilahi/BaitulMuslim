@@ -14,14 +14,14 @@ import BackButton from '../../components/BackButton';
 import Header from '../../components/Header';
 import Modal from 'react-native-modal';
 
-export default function CandidateProfile({navigation,route}) {
+export default function CandidateProfile({navigation, route}) {
   const [showProfile, setShowProfile] = useState(true);
 
   const [isModalVisibleKirim, setModalVisibleKirim] = useState(false);
   const [isModalVisibleCalon, setModalVisibleCalon] = useState(false);
   const [isModalVisibleHalang, setModalVisibleHalang] = useState(false);
   const [showKeluText, setShowKeluText] = useState(false);
-  const {id} = route?.params
+  const {id} = route?.params;
 
   const toggleModalKirim = () => {
     setModalVisibleKirim(!isModalVisibleKirim);
@@ -110,8 +110,7 @@ export default function CandidateProfile({navigation,route}) {
             <View style={styles.buttonSection}>
               <TouchableOpacity
                 style={styles.actionButton}
-                onPress={()=>navigation.navigate("Chat",{id:id})}
-              >
+                onPress={() => navigation.navigate('Chat', {id: id})}>
                 <Text style={styles.buttonText}>Mesej</Text>
               </TouchableOpacity>
               <TouchableOpacity
@@ -140,11 +139,15 @@ export default function CandidateProfile({navigation,route}) {
               <TouchableOpacity
                 style={styles.whiteBtn2}
                 onPress={toggleModalHalang}>
-                <Text style={styles.buttonTextBlack}>Keluarkan dari calon dihalang </Text>
+                <Text style={styles.buttonTextBlack}>
+                  Keluarkan dari calon dihalang{' '}
+                </Text>
               </TouchableOpacity>
             )}
 
-            <TouchableOpacity style={styles.whiteBtn}>
+            <TouchableOpacity
+              style={styles.whiteBtn}
+              onPress={() => navigation.navigate('ComplaintReport', {id})}>
               <Text style={styles.buttonTextBlack}>Aduan</Text>
             </TouchableOpacity>
           </>
