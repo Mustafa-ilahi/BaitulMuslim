@@ -14,7 +14,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import BackButton from '../../components/BackButton';
 import {colors, sizes} from '../../services';
 
-export default function ComplaintReport({route}) {
+export default function ComplaintReport({route,navigation}) {
   const {id} = route?.params;
 
   const [noCalon, setNoCalon] = useState('');
@@ -36,6 +36,7 @@ export default function ComplaintReport({route}) {
   const handleFileUpload = () => {
     // You can integrate a file picker library here to allow file attachment
     console.log('File upload functionality here');
+    navigation.navigate('FileUpload');
   };
 
   const handleSubmit = () => {
