@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   container: {
     padding: 20,
     backgroundColor: '#f8f8f8',
-    height: sizes.screenHeight,
+    // height: sizes.screenHeight,
   },
   backButton: {
     marginBottom: 20,
@@ -102,6 +102,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingBottom: sizes.screenHeight * 0.03,
     marginTop: sizes.screenHeight * 0.03,
+    marginBottom: sizes.screenHeight * 0.03,
   },
   top: {
     marginTop: sizes.screenHeight * 0.03,

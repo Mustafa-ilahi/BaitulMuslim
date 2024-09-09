@@ -23,8 +23,8 @@ export default function ConfirmationComplaintReport({route, navigation}) {
   };
 
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <ScrollView>
+    <SafeAreaView >
+      <ScrollView contentContainerStyle={{flexGrow: 1}}>
         <View style={styles.container}>
           <BackButton />
           <Text style={styles.title}>Pengesahan Laporan Aduan</Text>
@@ -73,6 +73,7 @@ export default function ConfirmationComplaintReport({route, navigation}) {
               <Text style={styles.submitButtonText}>Hantar</Text>
             </TouchableOpacity>
           </View>
+
         </View>
       </ScrollView>
     </SafeAreaView>
