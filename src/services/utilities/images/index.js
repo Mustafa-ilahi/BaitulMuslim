@@ -18,6 +18,8 @@ import sendIcon from '../../../assets/sendIcon.png';
 import headerbackIcon from '../../../assets/headerbackIcon.png';
 import profile from '../../../assets/profile.png';
 import menu from '../../../assets/menu.png';
+import imageIcon from '../../../assets/imageIcon.png';
+import videoIcon from '../../../assets/videoIcon.png';
 
 export const images = {
   logo,
@@ -40,4 +42,6 @@ export const images = {
   headerbackIcon,
   profile,
   menu,
+imageIcon,videoIcon
+
 };

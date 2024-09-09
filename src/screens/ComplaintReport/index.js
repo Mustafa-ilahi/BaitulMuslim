@@ -16,7 +16,6 @@ import {colors, sizes} from '../../services';
 
 export default function ComplaintReport({route}) {
   const {id} = route?.params;
-  console.log(id);
 
   const [noCalon, setNoCalon] = useState('');
   const [keterangan, setKeterangan] = useState('');

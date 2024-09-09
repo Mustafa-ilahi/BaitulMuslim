@@ -12,6 +12,7 @@ import Chat from '../../screens/Chat';
 import CandidateProfile from '../../screens/CandidateProfile';
 import CandidateForm from '../../screens/CandidateInfo';
 import ComplaintReport from '../../screens/ComplaintReport';
+import FileUpload from '../../screens/FileUpload';
 
 const Stack = createStackNavigator();
 
@@ -20,7 +21,7 @@ export default function MainNavigator() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        // initialRouteName="ComplaintReport"
+        initialRouteName="FileUpload"
         >
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Login" component={Login} />
@@ -37,6 +38,7 @@ export default function MainNavigator() {
         <Stack.Screen name="CandidateForm" component={CandidateForm} />
         <Stack.Screen name="CandidateProfile" component={CandidateProfile} />
         <Stack.Screen name="ComplaintReport" component={ComplaintReport} />
+        <Stack.Screen name="FileUpload" component={FileUpload} />
       </Stack.Navigator>
     </NavigationContainer>
   );
