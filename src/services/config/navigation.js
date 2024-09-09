@@ -13,6 +13,7 @@ import CandidateProfile from '../../screens/CandidateProfile';
 import CandidateForm from '../../screens/CandidateInfo';
 import ComplaintReport from '../../screens/ComplaintReport';
 import FileUpload from '../../screens/FileUpload';
+import ConfirmationComplaintReport from '../../screens/ConfirmationComplaintReport';
 
 const Stack = createStackNavigator();
 
@@ -39,7 +40,10 @@ export default function MainNavigator() {
         <Stack.Screen name="CandidateProfile" component={CandidateProfile} />
         <Stack.Screen name="ComplaintReport" component={ComplaintReport} />
         <Stack.Screen name="FileUpload" component={FileUpload} />
+        <Stack.Screen name="ConfirmationComplaintReport" component={ConfirmationComplaintReport} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+

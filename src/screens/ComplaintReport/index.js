@@ -14,7 +14,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import BackButton from '../../components/BackButton';
 import {colors, sizes} from '../../services';
 
-export default function ComplaintReport({route,navigation}) {
+export default function ComplaintReport({route, navigation}) {
   const {id} = route?.params;
 
   const [noCalon, setNoCalon] = useState('');
@@ -40,7 +40,24 @@ export default function ComplaintReport({route,navigation}) {
   };
 
   const handleSubmit = () => {
-    console.log('Form submitted');
+    const selectedIssuesArray = Object.keys(selectedIssues)
+      .filter(issue => selectedIssues[issue])
+      .map(issue => {
+        const messages = {
+          gambarSalah: 'Gambar tidak betul',
+          borangSalah: 'Maklumat borang yang tidak betul',
+          penipuan: 'Penipuan',
+          seranganPeribadi: 'Serangan peribadi',
+          sudahBerkahwin: 'Calon ini sudah berkahwin',
+          masalahLain: 'Masalah lain',
+        };
+        return messages[issue];
+      });
+    navigation.navigate('ConfirmationComplaintReport', {
+      id: id,
+      selectedIssues: selectedIssuesArray,
+      keterangan:keterangan
+    });
   };
 
   return (

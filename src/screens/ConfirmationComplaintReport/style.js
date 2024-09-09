@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   container: {
     padding: 20,
     backgroundColor: '#f8f8f8',
-    flex: 1,
+    height: sizes.screenHeight,
   },
   backButton: {
     marginBottom: 20,
@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: 'center',
     color: colors.grayText,
+    marginTop: sizes.screenHeight * 0.05,
   },
   center: {
     textAlign: 'center',
@@ -37,7 +38,7 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 5,
     backgroundColor: '#fff',
-    color:colors.grayText
+    color: colors.grayText,
   },
   id: {
     color: colors.grayText,
@@ -70,6 +71,14 @@ export const styles = StyleSheet.create({
     width: sizes.screenWidth * 0.3,
     alignSelf: 'center',
   },
+  balikButton: {
+    backgroundColor: colors.blue,
+    padding: sizes.screenHeight * 0.01,
+    borderRadius: sizes.screenWidth * 0.02,
+    alignItems: 'center',
+    width: sizes.screenWidth * 0.4,
+    alignSelf: 'center',
+  },
   submitButtonText: {
     color: '#fff',
     fontSize: 16,
@@ -82,7 +91,6 @@ export const styles = StyleSheet.create({
     color: colors.grayText,
     fontWeight: 'bold',
     fontSize: fontSize.h6,
-    backgroundColor: colors.disabledBg2,
     paddingRight: sizes.screenHeight * 0.011,
     paddingLeft: sizes.screenHeight * 0.011,
   },
@@ -91,6 +99,11 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    alignSelf: 'center',
     paddingBottom: sizes.screenHeight * 0.03,
+    marginTop: sizes.screenHeight * 0.03,
+  },
+  top: {
+    marginTop: sizes.screenHeight * 0.03,
   },
 });

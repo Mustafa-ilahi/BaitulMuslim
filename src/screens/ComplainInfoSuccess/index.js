@@ -13,7 +13,10 @@ import {
 import {styles} from './style';
 import {images} from '../../services/utilities/images';
 
-export default function ComplainInfoSuccess() {
+export default function ComplainInfoSuccess({navigation}) {
+  const handleSave = () => {
+    navigation.navigate('CandidatesList');
+  };
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -22,13 +25,11 @@ export default function ComplainInfoSuccess() {
         </View>
         <Image source={images.successIcon} style={styles.successIcon} />
         <Text style={[styles.content, styles.padding]}>
-        Maklumat aduan anda sudah  berjaya dihantar
+          Maklumat aduan anda sudah berjaya dihantar
         </Text>
 
         <View style={styles.btnTop}>
-          <TouchableOpacity
-            //   onPress={handleSave}
-            style={styles.saveBtn}>
+          <TouchableOpacity onPress={handleSave} style={styles.saveBtn}>
             <Text style={styles.saveBtnText}>Ok</Text>
           </TouchableOpacity>
         </View>
