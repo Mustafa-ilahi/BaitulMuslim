@@ -14,6 +14,7 @@ import {images} from '../../services/utilities/images';
 import {colors, sizes} from '../../services';
 import Modal from 'react-native-modal';
 import {Picker} from '@react-native-picker/picker';
+import Drawer from '../../components/Drawer/Drawer';
 
 export default function CandidatesList({navigation}) {
   const [searchInput, setSearchInput] = useState('');
@@ -51,6 +52,7 @@ export default function CandidatesList({navigation}) {
     umurMinimum: '',
     umurMaximum: '',
   });
+  const [openDrawerModal, setOpenDrawerModal] = useState(false)
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
@@ -62,7 +64,8 @@ export default function CandidatesList({navigation}) {
     <SafeAreaView style={{flex: 1}}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
         <View style={styles.container}>
-          <TouchableOpacity>
+          <Drawer open={openDrawerModal} close={(res)=> setOpenDrawerModal(res) } />
+          <TouchableOpacity  onPress={()=> setOpenDrawerModal(true)}>
             <Image source={images.menuIcon} style={styles.menuIcon} />
           </TouchableOpacity>
           <Text style={styles.heading}>Senarai Calon</Text>
