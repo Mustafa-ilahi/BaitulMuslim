@@ -39,6 +39,8 @@ const Drawer = ({open, close}) => {
         navigation.navigate('MessageList');
       } else if (item.name == 'Profile Saya') {
         navigation.navigate('MyProfile');
+      } else if (item.name == 'Calon Kegemaran') {
+        navigation.navigate('FavoriteCandidate');
       } else if (item.name == 'Hubungi kami') {
         navigation.navigate('ContactUs');
       } else if (item.name == 'Calon Dihalang') {

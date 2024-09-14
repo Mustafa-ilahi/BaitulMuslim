@@ -20,6 +20,7 @@ import UpdatePicture from '../../screens/UpdatePicture';
 import MessageList from '../../screens/MessageList';
 import ContactUs from '../../screens/ContactUs';
 import CandidateBarred from '../../screens/CandidateBarred';
+import FavoriteCandidate from '../../screens/FavoriteCandidate';
 
 const Stack = createStackNavigator();
 
@@ -28,7 +29,7 @@ export default function MainNavigator() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        // initialRouteName="CandidateBarred"
+        // initialRouteName="FavoriteCandidate"
         >
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Login" component={Login} />
@@ -53,6 +54,7 @@ export default function MainNavigator() {
         <Stack.Screen name="MessageList" component={MessageList} />
         <Stack.Screen name="ContactUs" component={ContactUs} />
         <Stack.Screen name="CandidateBarred" component={CandidateBarred} />
+        <Stack.Screen name="FavoriteCandidate" component={FavoriteCandidate} />
         
       </Stack.Navigator>
     </NavigationContainer>
