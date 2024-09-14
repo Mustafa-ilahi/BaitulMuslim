@@ -34,11 +34,11 @@ const Drawer = ({open, close}) => {
       } else if (item.name == 'BaitulMuslim') {
         navigation.navigate('CandidatesList');
       } else if (item.name == 'Notifikasi') {
-        navigation.navigate('CandidateProfile');
+        navigation.navigate('Notification');
       } else if (item.name == 'Log Keluar') {
         navigation.navigate('Registration');
       }
-    }, 1000);
+    }, 500);
   };
 
   return (
