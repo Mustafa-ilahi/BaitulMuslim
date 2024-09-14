@@ -17,6 +17,7 @@ import ConfirmationComplaintReport from '../../screens/ConfirmationComplaintRepo
 import Notification from '../../screens/Notification';
 import MyProfile from '../../screens/MyProfile';
 import UpdatePicture from '../../screens/UpdatePicture';
+import MessageList from '../../screens/MessageList';
 
 const Stack = createStackNavigator();
 
@@ -25,7 +26,7 @@ export default function MainNavigator() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        // initialRouteName="UpdatePicture"
+        initialRouteName="MessageList"
         >
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Login" component={Login} />
@@ -47,6 +48,7 @@ export default function MainNavigator() {
         <Stack.Screen name="Notification" component={Notification} />
         <Stack.Screen name="MyProfile" component={MyProfile} />
         <Stack.Screen name="UpdatePicture" component={UpdatePicture} />
+        <Stack.Screen name="MessageList" component={MessageList} />
         
       </Stack.Navigator>
     </NavigationContainer>
