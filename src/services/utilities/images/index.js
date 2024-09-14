@@ -37,6 +37,7 @@ import editUser from '../../../assets/editUser.png';
 import messenger from '../../../assets/messenger.png';
 import instagram from '../../../assets/instagram.png';
 import phone from '../../../assets/phone.png';
+import user3 from '../../../assets/user3.png';
 
 export const images = {
   logo,
@@ -78,4 +79,5 @@ export const images = {
   messenger,
   instagram,
   phone,
+  user3
 };
