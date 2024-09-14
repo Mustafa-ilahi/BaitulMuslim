@@ -16,6 +16,7 @@ import FileUpload from '../../screens/FileUpload';
 import ConfirmationComplaintReport from '../../screens/ConfirmationComplaintReport';
 import Notification from '../../screens/Notification';
 import MyProfile from '../../screens/MyProfile';
+import UpdatePicture from '../../screens/UpdatePicture';
 
 const Stack = createStackNavigator();
 
@@ -24,7 +25,7 @@ export default function MainNavigator() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        // initialRouteName="MyProfile"
+        // initialRouteName="UpdatePicture"
         >
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Login" component={Login} />
@@ -45,6 +46,7 @@ export default function MainNavigator() {
         <Stack.Screen name="ConfirmationComplaintReport" component={ConfirmationComplaintReport} />
         <Stack.Screen name="Notification" component={Notification} />
         <Stack.Screen name="MyProfile" component={MyProfile} />
+        <Stack.Screen name="UpdatePicture" component={UpdatePicture} />
         
       </Stack.Navigator>
     </NavigationContainer>

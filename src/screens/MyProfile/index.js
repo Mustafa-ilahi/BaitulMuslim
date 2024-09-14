@@ -108,7 +108,7 @@ export default function MyProfile({navigation}) {
             <View style={styles.buttonSection}>
               <TouchableOpacity
                 style={styles.actionButton}
-                // onPress={() => navigation.navigate('Chat', {id: id})}
+                onPress={() => navigation.navigate('UpdatePicture')}
               >
                 <Text style={styles.buttonText}>Kemas kini gambar</Text>
               </TouchableOpacity>

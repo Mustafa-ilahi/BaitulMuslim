@@ -33,6 +33,7 @@ import settingsIcon from '../../../assets/settingsIcon.png';
 import logoutIcon from '../../../assets/logoutIcon.png';
 import logo2 from '../../../assets/logo2.png';
 import notif2 from '../../../assets/notif2.png';
+import editUser from '../../../assets/editUser.png';
 
 export const images = {
   logo,
@@ -69,5 +70,6 @@ export const images = {
   settingsIcon,
   logoutIcon,
   logo2,
-  notif2
+  notif2,
+  editUser
 };
