@@ -20,6 +20,18 @@ import profile from '../../../assets/profile.png';
 import menu from '../../../assets/menu.png';
 import imageIcon from '../../../assets/imageIcon.png';
 import videoIcon from '../../../assets/videoIcon.png';
+import listIcon from '../../../assets/listIcon.png';
+import notificationIcon from '../../../assets/notificationIcon.png';
+import userLogo from '../../../assets/userLogo.png';
+import heartIcon from '../../../assets/heartIcon.png';
+import chatIcon from '../../../assets/chatIcon.png';
+import shoppingIcon from '../../../assets/shoppingIcon.png';
+import warningIcon from '../../../assets/warningIcon.png';
+import contactsIcon from '../../../assets/contactsIcon.png';
+import dontDistrubIcon from '../../../assets/dontDistrubIcon.png';
+import settingsIcon from '../../../assets/settingsIcon.png';
+import logoutIcon from '../../../assets/logoutIcon.png';
+import logo2 from '../../../assets/logo2.png';
 
 export const images = {
   logo,
@@ -42,6 +54,18 @@ export const images = {
   headerbackIcon,
   profile,
   menu,
-imageIcon,videoIcon
-
+  imageIcon,
+  videoIcon,
+  listIcon,
+  notificationIcon,
+  userLogo,
+  heartIcon,
+  chatIcon,
+  shoppingIcon,
+  warningIcon,
+  contactsIcon,
+  dontDistrubIcon,
+  settingsIcon,
+  logoutIcon,
+  logo2
 };
