@@ -28,7 +28,7 @@ export default function MainNavigator() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="CandidateBarred"
+        // initialRouteName="CandidateBarred"
         >
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Login" component={Login} />
