@@ -34,6 +34,9 @@ import logoutIcon from '../../../assets/logoutIcon.png';
 import logo2 from '../../../assets/logo2.png';
 import notif2 from '../../../assets/notif2.png';
 import editUser from '../../../assets/editUser.png';
+import messenger from '../../../assets/messenger.png';
+import instagram from '../../../assets/instagram.png';
+import phone from '../../../assets/phone.png';
 
 export const images = {
   logo,
@@ -71,5 +74,8 @@ export const images = {
   logoutIcon,
   logo2,
   notif2,
-  editUser
+  editUser,
+  messenger,
+  instagram,
+  phone,
 };

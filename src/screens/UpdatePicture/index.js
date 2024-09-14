@@ -80,7 +80,6 @@ export default function UpdatePicture({navigation}) {
   const handleOk = () => {
     toggleModal();
     navigation.navigate('MyProfile');
-
   };
 
   return (

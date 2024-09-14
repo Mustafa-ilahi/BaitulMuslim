@@ -93,4 +93,17 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingBottom: sizes.screenHeight * 0.03,
   },
+  submitButton: {
+    backgroundColor: colors.blue,
+    padding: sizes.screenHeight * 0.01,
+    borderRadius: sizes.screenWidth * 0.02,
+    alignItems: 'center',
+    width: sizes.screenWidth * 0.3,
+    alignSelf: 'center',
+  },
+  submitButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });
