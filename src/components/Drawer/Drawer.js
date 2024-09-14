@@ -35,7 +35,10 @@ const Drawer = ({open, close}) => {
         navigation.navigate('CandidatesList');
       } else if (item.name == 'Notifikasi') {
         navigation.navigate('Notification');
-      } else if (item.name == 'Log Keluar') {
+      } else if (item.name == 'Profile Saya') {
+        navigation.navigate('MyProfile');
+      } 
+      else if (item.name == 'Log Keluar') {
         navigation.navigate('Registration');
       }
     }, 500);
