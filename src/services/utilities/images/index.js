@@ -32,6 +32,7 @@ import dontDistrubIcon from '../../../assets/dontDistrubIcon.png';
 import settingsIcon from '../../../assets/settingsIcon.png';
 import logoutIcon from '../../../assets/logoutIcon.png';
 import logo2 from '../../../assets/logo2.png';
+import notif2 from '../../../assets/notif2.png';
 
 export const images = {
   logo,
@@ -67,5 +68,6 @@ export const images = {
   dontDistrubIcon,
   settingsIcon,
   logoutIcon,
-  logo2
+  logo2,
+  notif2
 };

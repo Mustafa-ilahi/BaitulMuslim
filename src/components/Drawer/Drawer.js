@@ -31,10 +31,11 @@ const Drawer = ({open, close}) => {
     setTimeout(() => {
       if (item.name == 'Seneral Calon') {
         navigation.navigate('CandidatesList');
-      } else if (item.name == 'Notificaton') {
+      } else if (item.name == 'BaitulMuslim') {
+        navigation.navigate('CandidatesList');
+      } else if (item.name == 'Notifikasi') {
         navigation.navigate('CandidateProfile');
-      }
-      else if (item.name == 'Log Keluar') {
+      } else if (item.name == 'Log Keluar') {
         navigation.navigate('Registration');
       }
     }, 1000);
