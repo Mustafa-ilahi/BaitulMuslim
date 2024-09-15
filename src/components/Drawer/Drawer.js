@@ -15,7 +15,7 @@ const Drawer = ({open, close}) => {
     {id: 4, name: 'Profile Saya', img: images.userLogo},
     {id: 5, name: 'Calon Kegemaran', img: images.heartIcon},
     {id: 6, name: 'Senerai Mesej', img: images.chatIcon},
-    {id: 7, name: 'Senerai Pakej', img: images.shoppingIcon},
+    {id: 7, name: 'Senarai Pakej', img: images.shoppingIcon},
     {id: 8, name: 'Peringatan', img: images.warningIcon},
     {id: 9, name: 'Hubungi kami', img: images.contactsIcon},
     {id: 10, name: 'Calon Dihalang', img: images.dontDistrubIcon},
@@ -37,6 +37,8 @@ const Drawer = ({open, close}) => {
         navigation.navigate('Notification');
       } else if (item.name == 'Senerai Mesej') {
         navigation.navigate('MessageList');
+      } else if (item.name == 'Senarai Pakej') {
+        navigation.navigate('PackagesList');
       } else if (item.name == 'Profile Saya') {
         navigation.navigate('MyProfile');
       } else if (item.name == 'Calon Kegemaran') {
