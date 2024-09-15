@@ -14,7 +14,7 @@ import {styles} from './style';
 import {images} from '../../services/utilities/images';
 import {colors, sizes} from '../../services';
 
-export default function PackagesList() {
+export default function PackagesList({navigation}) {
   return (
     <SafeAreaView>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
@@ -57,7 +57,14 @@ export default function PackagesList() {
               </Text>
             </View>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() =>
+                navigation.navigate('PackageInfo', {
+                  title: 'Ahli Premium 2 Tahun',
+                  price: 'RM 150.00',
+                })
+              }>
               <Text style={styles.buttonText}>
                 Klik di sini untuk naik taraf
               </Text>
@@ -99,13 +106,19 @@ export default function PackagesList() {
               </Text>
             </View>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button}
+             onPress={() =>
+                navigation.navigate('PackageInfo', {
+                  title: 'Ahli Premium 1 Tahun',
+                  price: 'RM 130.00',
+                })
+            }
+            >
               <Text style={styles.buttonText}>
                 Klik di sini untuk naik taraf
               </Text>
             </TouchableOpacity>
           </View>
-
 
           <View style={styles.card}>
             <View style={styles.header}>
@@ -142,7 +155,14 @@ export default function PackagesList() {
               </Text>
             </View>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button}
+              onPress={() =>
+                navigation.navigate('PackageInfo', {
+                  title: 'Ahli Premium 2 Bulan',
+                  price: 'RM 90.00',
+                })
+            }
+            > 
               <Text style={styles.buttonText}>
                 Klik di sini untuk naik taraf
               </Text>
