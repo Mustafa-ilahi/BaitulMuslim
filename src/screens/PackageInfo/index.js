@@ -49,7 +49,7 @@ export default function PackageInfo({route, navigation}) {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate("PaymentMethod")}>
           <Text style={styles.buttonText}>Bayar</Text>
         </TouchableOpacity>
       </View>
