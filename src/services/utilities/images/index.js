@@ -39,6 +39,10 @@ import instagram from '../../../assets/instagram.png';
 import phone from '../../../assets/phone.png';
 import user3 from '../../../assets/user3.png';
 import star from '../../../assets/star.png';
+import insertPhoto from '../../../assets/insertPhoto.png';
+import assignment from '../../../assets/assignment.png';
+import fbIcon from '../../../assets/fbIcon.png';
+import googleIcon from '../../../assets/googleIcon.png';
 
 export const images = {
   logo,
@@ -82,4 +86,8 @@ export const images = {
   phone,
   user3,
   star,
+  insertPhoto,
+  assignment,
+  fbIcon,
+  googleIcon,
 };

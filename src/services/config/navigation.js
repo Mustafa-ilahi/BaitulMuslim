@@ -25,6 +25,7 @@ import Warning from '../../screens/Warning';
 import PackagesList from '../../screens/PackagesList';
 import PackageInfo from '../../screens/PackageInfo';
 import PaymentMethod from '../../screens/PaymentMethod';
+import Settings from '../../screens/Settings';
 
 const Stack = createStackNavigator();
 
@@ -33,7 +34,7 @@ export default function MainNavigator() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        // initialRouteName="PaymentMethod"
+        initialRouteName="Settings"
         >
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Login" component={Login} />
@@ -63,6 +64,7 @@ export default function MainNavigator() {
         <Stack.Screen name="PackagesList" component={PackagesList} />
         <Stack.Screen name="PackageInfo" component={PackageInfo} />
         <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
+        <Stack.Screen name="Settings" component={Settings} />
         
       </Stack.Navigator>
     </NavigationContainer>
