@@ -49,6 +49,8 @@ const Drawer = ({open, close}) => {
         navigation.navigate('ContactUs');
       } else if (item.name == 'Calon Dihalang') {
         navigation.navigate('CandidateBarred');
+      } else if (item.name == 'Settings') {
+        navigation.navigate('Settings');
       } else if (item.name == 'Log Keluar') {
         navigation.navigate('Registration');
       }
