@@ -13,7 +13,7 @@ import locationIcon from '../../../assets/locationIcon.png';
 import schoolIcon from '../../../assets/schoolIcon.png';
 import workIcon from '../../../assets/workIcon.png';
 import user1 from '../../../assets/user1.png';
-import user2 from '../../../assets/user2.jpg';
+import user2 from '../../../assets/user2.jpeg';
 import sendIcon from '../../../assets/sendIcon.png';
 import headerbackIcon from '../../../assets/headerbackIcon.png';
 import profile from '../../../assets/profile.png';
