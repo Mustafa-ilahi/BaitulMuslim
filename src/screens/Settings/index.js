@@ -67,7 +67,9 @@ export default function Settings({navigation}) {
             <Image source={images.insertPhoto} style={styles.icon} />
             <Text style={styles.buttonText}> Kemaskini Gambar</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.updateButton, styles.borderBottom]}>
+          <TouchableOpacity
+            style={[styles.updateButton, styles.borderBottom]}
+            onPress={() => navigation.navigate('FormUpdate')}>
             <Image source={images.assignment} style={styles.icon2} />
 
             <Text style={styles.buttonText}> Kemaskini Borang</Text>
@@ -175,12 +177,10 @@ export default function Settings({navigation}) {
             <View style={styles.greenBorderModal}></View>
 
             <Text style={[styles.modalText, styles.bold]}>
-            Akaun anda sudah disimpan
+              Akaun anda sudah disimpan
             </Text>
             <View style={styles.btnTop}>
-              <TouchableOpacity
-                onPress={toggleModal}
-                style={styles.modalBtn}>
+              <TouchableOpacity onPress={toggleModal} style={styles.modalBtn}>
                 <Text style={styles.btnText}>OK</Text>
               </TouchableOpacity>
             </View>

@@ -114,13 +114,14 @@ export default function MyProfile({navigation}) {
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.actionButton}
-                // onPress={toggleModalKirim}
+                onPress={() => navigation.navigate('FormUpdate')}
+
               >
                 <Text style={styles.buttonText}>Kemas kini profil</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.actionButton}
-                // onPress={toggleModalCalon}
+                onPress={() => navigation.navigate('Settings')}
               >
                 <Text style={styles.buttonText}>Setting</Text>
               </TouchableOpacity>

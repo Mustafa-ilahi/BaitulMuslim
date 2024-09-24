@@ -26,6 +26,7 @@ import PackagesList from '../../screens/PackagesList';
 import PackageInfo from '../../screens/PackageInfo';
 import PaymentMethod from '../../screens/PaymentMethod';
 import Settings from '../../screens/Settings';
+import FormUpdate from '../../screens/FormUpdate';
 
 const Stack = createStackNavigator();
 
@@ -34,7 +35,7 @@ export default function MainNavigator() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        // initialRouteName="Settings"
+        // initialRouteName="FormUpdate"
         >
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Login" component={Login} />
@@ -65,6 +66,7 @@ export default function MainNavigator() {
         <Stack.Screen name="PackageInfo" component={PackageInfo} />
         <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
         <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="FormUpdate" component={FormUpdate} />
         
       </Stack.Navigator>
     </NavigationContainer>
