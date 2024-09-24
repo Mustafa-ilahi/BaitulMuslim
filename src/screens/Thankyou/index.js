@@ -15,7 +15,7 @@ import {images} from '../../services/utilities/images';
 
 export default function Thankyou({navigation}) {
   const handleSenarai = () => {
-    navigation.navigate('CandidatesList');
+    navigation.navigate('ConditionLogic');
   };
   return (
     <SafeAreaView>
