@@ -83,4 +83,29 @@ export const styles = StyleSheet.create({
   top: {
     top: sizes.screenHeight * 0.006,
   },
+  modalContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.lightOrange, 
+    padding: 20,
+  },
+  errorText: {
+    fontSize: 18,
+    color: 'white',
+    textAlign: 'center',
+    marginBottom: 20,
+    fontWeight: 'bold',
+  },
+  buttonContainer: {
+    backgroundColor: 'white',
+    borderRadius: 5,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    elevation: 3, // Adds a subtle shadow for Android
+  },
+  buttonText: {
+    color: 'red',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });

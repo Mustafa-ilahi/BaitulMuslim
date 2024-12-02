@@ -7,12 +7,16 @@ import {
   Image,
   SafeAreaView,
   ScrollView,
+  ActivityIndicator,
+  Modal,
+  Button,
 } from 'react-native';
 
 import React, {useState} from 'react';
 import {styles} from './style';
 import {images} from '../../services/utilities/images';
 import {colors, sizes} from '../../services';
+import axios from 'axios';
 
 export default function Registration({navigation}) {
   const [phone, setPhone] = useState('');
@@ -20,10 +24,87 @@ export default function Registration({navigation}) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [loader, setLoader] = useState(false);
+  const [error, setError] = useState('');
 
   const handleLoginPress = () => {
-    navigation.navigate("Login")
+    navigation.navigate('Login');
     console.log('Log Masuk Di Sini pressed');
+  };
+
+  const handleSignup = () => {
+    if (!username || username.trim() === '') {
+      setError('Username is required.');
+      return;
+    }
+
+    if (!password || password.length < 6) {
+      setError('Password must be at least 6 characters long.');
+      return;
+    }
+
+    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
+    if (!phone || !/^\d{10,15}$/.test(phone)) {
+      setError('Please enter a valid phone number (10-15 digits).');
+      return;
+    }
+
+    setError('');
+    setLoader(true);
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
+
+    const raw = JSON.stringify({
+      name: {
+        value: username,
+      },
+      pass: {
+        value: password,
+      },
+      mail: {
+        value: email,
+      },
+      field_telefon_bimbit: {
+        value: phone,
+      },
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow',
+    };
+
+    fetch(
+      'https://api.gajohrima.com/user/register?_format=json',
+      requestOptions,
+    )
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          console.error(`Request failed with status: ${response.status}`);
+          setError(`Signup failed. Status code: ${response.status}`);
+          setLoader(false);
+          return Promise.reject(new Error(`HTTP status ${response.status}`));
+        }
+      })
+      .then(result => {
+        console.log('Success:', result);
+        setLoader(false);
+        setError('');
+        // navigation.navigate('CandidateForm');
+      })
+      .catch(error => {
+        console.log('Error:', error.message);
+        setLoader(false);
+        setError(error.message);
+      });
   };
 
   return (
@@ -86,10 +167,26 @@ export default function Registration({navigation}) {
 
           <TouchableOpacity
             style={styles.registerButton}
-            onPress={() => navigation.navigate('CandidateForm')}>
-            <Text style={styles.registerButtonText}>Daftar</Text>
+            onPress={handleSignup}>
+            {loader ? (
+              <ActivityIndicator color={'#fff'} />
+            ) : (
+              <Text style={styles.registerButtonText}>Daftar</Text>
+            )}
           </TouchableOpacity>
-
+          {error && (
+            <Modal transparent={true} visible={true}>
+              <View style={styles.modalContainer}>
+                <Text style={styles.errorText}>Error: {error}</Text>
+                {/* <Button title="OK" onPress={() => setError(false)} /> */}
+                <TouchableOpacity onPress={handleLoginPress} style={styles.top}>
+              <Text style={[styles.loginLink, styles.top]}>
+                OK
+              </Text>
+            </TouchableOpacity>
+              </View>
+            </Modal>
+          )}
           <Text style={styles.loginText}>
             Sudah ada akaun?{' '}
             <TouchableOpacity onPress={handleLoginPress} style={styles.top}>
