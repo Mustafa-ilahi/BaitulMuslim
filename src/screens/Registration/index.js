@@ -11,6 +11,7 @@ import {
   Modal,
   Button,
 } from 'react-native';
+import Toast from 'react-native-toast-message';
 
 import React, {useState} from 'react';
 import {styles} from './style';
@@ -34,26 +35,43 @@ export default function Registration({navigation}) {
 
   const handleSignup = () => {
     if (!username || username.trim() === '') {
-      setError('Username is required.');
+      Toast.show({
+        type: 'error',
+        text1: 'Oops!',
+        text2: 'Username is required',
+      });
       return;
     }
 
     if (!password || password.length < 6) {
       setError('Password must be at least 6 characters long.');
+      Toast.show({
+        type: 'error',
+        text1: 'Oops!',
+        text2: 'Password must be at least 6 characters long.',
+      });
       return;
     }
 
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
-      setError('Please enter a valid email address.');
+      Toast.show({
+        type: 'error',
+        text1: 'Oops!',
+        text2: 'Please enter a valid email address.',
+      });
       return;
     }
 
     if (!phone || !/^\d{10,15}$/.test(phone)) {
-      setError('Please enter a valid phone number (10-15 digits).');
+      // setError('Please enter a valid phone number (10-15 digits).');
+      Toast.show({
+        type: 'error',
+        text1: 'Oops!',
+        text2: 'Please enter a valid phone number (10-15 digits).',
+      });
       return;
     }
 
-    setError('');
     setLoader(true);
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
@@ -84,26 +102,43 @@ export default function Registration({navigation}) {
       'https://api.gajohrima.com/user/register?_format=json',
       requestOptions,
     )
-      .then(response => {
+      .then(async response => {
         if (response.ok) {
           return response.json();
         } else {
-          console.error(`Request failed with status: ${response.status}`);
-          setError(`Signup failed. Status code: ${response.status}`);
+          const errorData = await response.json().catch(() => null);
+          console.log(errorData.message);
+
+          console.error(`Request failed with status: ${errorData.message}`);
+          // setError(`Signup failed. Status code: ${errorData.message}`);
           setLoader(false);
-          return Promise.reject(new Error(`HTTP status ${response.status}`));
+          return Promise.reject(new Error(`Error ${errorData.message}`));
         }
       })
       .then(result => {
         console.log('Success:', result);
         setLoader(false);
+        Toast.show({
+          type: 'success',
+          text1: 'Account Created Successfully!',
+          text2: 'Signup Successful',
+        });
         setError('');
-        // navigation.navigate('CandidateForm');
+        setTimeout(() => {
+          navigation.navigate('CandidateForm');
+        }, 500);
       })
       .catch(error => {
         console.log('Error:', error.message);
         setLoader(false);
         setError(error.message);
+        Toast.show({
+          type: 'error',
+          text1: 'Oops!',
+          text2: error.message,
+          visibilityTime: 4000,
+          textStyle: {fontSize: 20, fontWeight: 'bold'},
+        });
       });
   };
 
@@ -174,19 +209,7 @@ export default function Registration({navigation}) {
               <Text style={styles.registerButtonText}>Daftar</Text>
             )}
           </TouchableOpacity>
-          {error && (
-            <Modal transparent={true} visible={true}>
-              <View style={styles.modalContainer}>
-                <Text style={styles.errorText}>Error: {error}</Text>
-                {/* <Button title="OK" onPress={() => setError(false)} /> */}
-                <TouchableOpacity onPress={handleLoginPress} style={styles.top}>
-              <Text style={[styles.loginLink, styles.top]}>
-                OK
-              </Text>
-            </TouchableOpacity>
-              </View>
-            </Modal>
-          )}
+
           <Text style={styles.loginText}>
             Sudah ada akaun?{' '}
             <TouchableOpacity onPress={handleLoginPress} style={styles.top}>
@@ -200,6 +223,8 @@ export default function Registration({navigation}) {
             dan DUDA sahaja
           </Text>
         </View>
+        <Toast />
+
         <View style={{marginBottom: sizes.screenHeight * 0.1}}></View>
       </ScrollView>
     </SafeAreaView>
